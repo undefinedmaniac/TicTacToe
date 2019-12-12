@@ -1,0 +1,61 @@
+class NetworkHost
+
+class NetworkClient
+
+
+
+class HostLogic
+
+// The host logic will not know if the host is using Xs or Os
+// It does not need to know this information as it only needs to differentiate between
+// who is playing and knows nothing about the graphical symbols
+
+// Starts a new game
+// isHostFirstPlayer should be true if the host will be the first player to play,
+// otherwise the opponent will be first
+public void startNewGame(boolean isHostFirstPlayer)
+
+// Plays an X or O on the gameboard
+// isOpponent must be true if the opponent is playing
+// position is a number 0 - 8 representing the position on the game board
+// 0|1|2
+// 3|4|5
+// 6|7|8
+// The integer return value is the result of the operation
+// 0 - Success, the piece was played on the board
+// 1 - Failure, it is not the specified player's turn
+// 2 - Failure, the position is already occupied
+public int play(boolean isOpponent, int position)
+
+// Checks if there is a winner in the game
+// the integer return value is the result of the checks
+// 0 - The game is not finished yet
+// 1 - The host won the game
+// 2 - The opponent won the game
+// 3 - The game is a draw
+public int checkForWinner()
+
+class ClientLogic
+
+// This class will be responsible for drawing the game UI
+// and providing events when the user interacts with the UI
+class TicTacToeUI
+
+// Sets the local players symbol to Xs or Os
+// isX should be true if the local player will use Xs or false if they will use Os
+public void setSymbol(boolean isX)
+
+// Updates a spot on the game board
+// position is a number 0 - 8 representing the position on the game board
+// isOpponent should be true if the opponent caused the board update
+public void updateBoard(boolean isOpponent, int position)
+
+// Updates the message that indicates whose turn it is
+// isOpponent should be true if it is the opponents turn
+public void updateTurnIndicator(boolean isOpponent)
+
+// Display the win / lose messages
+public void displayWinMessage()
+public void displayLoseMessage()
+
+
